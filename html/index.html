@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Spectrum - The No Hassle jQuery Colorpicker</title>
+
+    <meta name="description" content="Spectrum is a JavaScript colorpicker plugin using the jQuery framework.  It is highly customizable, but can also be used as a simple input type=color polyfill">
+    <meta name="author" content="Brian Grinstead and Spectrum contributors">
+
+    <link rel="stylesheet" type="text/css" href="spectrum.css">
+   
+    
+    <script type="text/javascript" src="docs/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="spectrum.js"></script>
+    <script type='text/javascript' src='docs/toc.js'></script>
+    <script type='text/javascript' src='docs/docs.js'></script>
+</head>
+<body><input id='togglePaletteOnly'  />
+
+        
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="docs/prettify.js"></script>
+<script type="text/javascript">
+
+  console.log(colorToHex('rgb(255, 0, 0)'));
+
+  function colorToHex(color) {
+    if (color.substr(0, 1) === '#') {
+        return color;
+    }
+    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+
+    var red = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue = parseInt(digits[4]);
+
+    var rgb = blue | (green << 8) | (red << 16);
+    return digits[1] + '#' + rgb.toString(16);
+};
+
+</script>
+</body>
+</html>
